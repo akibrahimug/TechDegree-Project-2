@@ -1,10 +1,13 @@
 /* Font styles */
 html{
     font-family:'Rubik', sans-serif;
+    box-sizing: border-box;
 }
 p{
     font-weight: 300;
     text-align: center;
+    padding: 10px;
+    font-size: 20px;
 }
 .wrapper{
     padding-left: 1em;
@@ -20,10 +23,17 @@ h2,
 h3{
     text-align: center;
 }
+h2{
+    font-size: 20px;
+}
+h3{
+    font-weight: 100;
+    font-size: 20px;
+}
 
 .main-header{
     padding: 1em 0;
-    background-color: rgba(243, 243, 243, 0.836);
+    background-color: rgba(194, 216, 245, 0.836);
 }
 
 /* Picture Styles */
@@ -31,18 +41,26 @@ h3{
     width: 100%;
 }
 .pic-1{
+    max-width: 60%;
     margin-top: 50px;
+    margin-left: 20%;
 }
 
 /* LINKS */  
 a{
+    display: block;
     color: black;
+    font-weight: 500;
+    font-size: 20px;
 }
 a:hover{
     color:brown;
 }
 
 /* Navigation styles */
+.nav-ul{
+    margin: 0 auto;
+}
 .nav-li{
     box-sizing: border-box;
     width: 50%;
@@ -53,23 +71,88 @@ a:hover{
     padding: 10px;
 }
 
+
+ul.skills {
+    padding: 0;
+    text-align: center;
+  }
+  
+  .skills li {
+    border-radius: 6px;
+    display: inline-block;
+    background: #ff9904;
+    color: white;
+    font-size: 25px;
+    padding: 20px 25px;
+    margin: 5px;
+  }
+  
+  .skills li:nth-child(odd) {
+    background: #0399ff;
+  }
+ 
+
 /* Footer Styles */
 .main-footer{
-    border-top: 1.5px solid black;
+   
+    height: 110px;
+    padding: 40px 15px;
+    background-color: rgba(243, 243, 243, 0.836);
 }
 
 footer h3{
+    display: inline;
     text-align: left;
+    font-weight: 500;
+}
+footer a{
+    float: right;
+}
+
+.end-navigation{
+    display: none;
+}
+
+/* Profile Styles */
+
+.col{
+    margin: 10px;
+    min-height: 250px;
+}
+
+/* Contact styles */
+
+.contact-wrap{
+    color: gray;
+    background-color: rgba(194, 216, 245, 0.836);
+    padding: 2em 2em;
+    font-size:20px ;
+}
+.contact-heading{
+    color: black;
+}
+span{
+    font-weight: 500;
+    font-size: 20px;
 }
 
 /* Media Quaries */
 @media(min-width: 768px){
-    .wrapper{
+    .wrapper,
+    .main-profile{
         display: flex;
+        flex-wrap:wrap; 
+        max-width: 1000px;  
+        margin: 0 auto;   
+    }
+    .contact-wrap{
         width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-        flex-direction: column;
+    }
+    p{
+        font-size: 25px;
+    }
+    .col{
+        flex-basis: calc(50% - 20px)
     }
 
     .nav-li{
@@ -77,26 +160,84 @@ footer h3{
         background: none;
         border: none;
     }
-    .picture{
-        width: 50%;
-        max-width: 500px;
+    a{
+        display: inline;
+    }
+    .nav-ul{
+       
+        text-align: center;
+
     }
     .pic-1{
+        width: 40%;
+        margin-top:35px;
         float: right;
-        margin-bottom: 30px;
-        
-        
     }
+
+    .picture{
+       margin-left:5px   
+    }
+    .pic-1{
+        width: 200px;
+        margin-right: 20px;
+    }
+   
     .header-p{
        text-align: left;
-       margin-top: 8%;
-       padding: 1em 2em;
+       font-size: 25px;
+       padding: 1em;
+       color: gray;
        
     }
-    .profile{
-        float:left;
+
+    h1{
+        padding-top:50px;
+        margin-bottom: 30px;
     }
-  .pp{
-      width: 50%;
-  }
+    h2{
+        margin: 0 auto;
+        padding: 30px 0;
+        font-size: 25px;
+    }
+
+    h3{
+        font-size: 25px;
+    }
+    .footer-a{
+        display: none;
+    }
+    .end-navigation{
+        display: block;
+        float:right;
+    }
+    footer .nav-li a{
+        padding-left:10px
+    }
+   
+}
+
+@media(min-width: 1024px){
+    .wrapper,
+    .main-profile{
+        display: flex;
+        flex-wrap:wrap; 
+        max-width: 1000px;  
+        margin: 0 auto;   
+    }
+
+    .col{
+        flex-basis: calc(33.33% - 20px)
+    }
+
+    .top-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1,
+    .nav-ul{
+        padding: 40px;
+        font-size: 30px;
+    }
 }
